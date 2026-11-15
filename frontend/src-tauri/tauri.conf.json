@@ -1,8 +1,8 @@
 {
     "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-    "productName": "meetily",
+    "productName": "Granolax",
     "version": "0.5.0",
-    "identifier": "com.meetily.ai",
+    "identifier": "com.granolax.app",
     "build": {
         "frontendDist": "../out",
         "devUrl": "http://localhost:3118",
@@ -12,7 +12,7 @@
     "app": {
         "windows": [
             {
-                "title": "meetily",
+                "title": "Granolax",
                 "width": 1100,
                 "height": 700,
                 "preventOverflow": true,
@@ -81,20 +81,15 @@
     },
     "bundle": {
         "active": true,
-        "shortDescription": "Privacy-first AI meeting note taker",
-        "longDescription": "Meetily Community Edition is a free, open-source AI meeting assistant. Record meetings, transcribe audio locally and create AI summaries using local models or a provider you choose. Your recordings and transcripts stay on your device.",
+        "shortDescription": "Enregistreur de rendez-vous d'Antoine",
+        "longDescription": "Granolax enregistre les rendez-vous et les transcrit en local sur l'ordinateur. Dérivé de Meetily Community Edition (licence MIT, Zackriya Solutions).",
         "category": "Productivity",
-        "publisher": "Meetily",
-        "homepage": "https://meetily.ai",
+        "publisher": "Antoine Marquis",
+        "homepage": "https://github.com/marquisantoinepro-star/meetily",
         "targets": [
-            "deb",
-            "appimage",
-            "msi",
-            "nsis",
-            "app",
-            "dmg"
+            "nsis"
         ],
-        "createUpdaterArtifacts": true,
+        "createUpdaterArtifacts": false,
         "icon": [
             "icons/icon.png",
             "icons/icon_512x512.png",
@@ -114,7 +109,11 @@
         ],
         "linux": {
             "deb": {
-                "depends": ["libvulkan1", "libpulse0", "libasound2"]
+                "depends": [
+                    "libvulkan1",
+                    "libpulse0",
+                    "libasound2"
+                ]
             }
         },
         "macOS": {
@@ -122,15 +121,13 @@
             "signingIdentity": "-",
             "hardenedRuntime": true
         },
-        "windows": {
-            "signCommand": "powershell -ExecutionPolicy Bypass -File scripts/sign-windows.ps1 -FilePath %1"
-        }
+        "windows": {}
     },
     "plugins": {
         "updater": {
             "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVDQTYzMUQ3ODc5N0M4MkEKUldRcXlKZUgxekdtN09DRkVWSHNpZlJseEVOUmpNd1dDSTNaLzZ3MXJGTnY3WW1pdnlOYjBpbkIK",
             "endpoints": [
-                "https://github.com/Zackriya-Solutions/meeting-minutes/releases/latest/download/latest.json"
+                "https://github.com/marquisantoinepro-star/meetily/releases/latest/download/latest.json"
             ]
         }
     }

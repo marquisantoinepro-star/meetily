@@ -233,15 +233,10 @@ async fn normalize_legacy_preferences(prefs: &mut RecordingPreferences) {
 pub fn get_default_recordings_folder() -> PathBuf {
     #[cfg(target_os = "windows")]
     {
-        // Windows: %USERPROFILE%\Music\meetily-recordings
-        if let Some(music_dir) = dirs::audio_dir() {
-            music_dir.join("meetily-recordings")
-        } else {
-            // Fallback to Documents if Music folder is not available
-            dirs::document_dir()
-                .unwrap_or_else(|| PathBuf::from("."))
-                .join("meetily-recordings")
-        }
+        // Granolax : %USERPROFILE%\Documents\Granolax (dossier lu pour remplir la page Granolax)
+        dirs::document_dir()
+            .unwrap_or_else(|| PathBuf::from("."))
+            .join("Granolax")
     }
 
     #[cfg(target_os = "macos")]
